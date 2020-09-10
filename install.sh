@@ -12,7 +12,7 @@ cd ..
 
 # UX configuration
 
-pacman -Syy xorg xinit bspwm sxhkd nitrogen picom
+pacman -Syy xorg xorg-xinit bspwm sxhkd xwallpaper picom
 
 yay -S polybar
 
@@ -38,7 +38,6 @@ yay -S brave-bin
 yay -S spotify
 
 # Config Install
-
 
 curl -LO https://wallpapercave.com/wp/wp4489090.jpg
 
