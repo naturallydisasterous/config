@@ -32,6 +32,11 @@ git clone https://github.com/Aaron-Mann/config
 
 cp $path/config/src/bspwm/bspwmrc $HOME/.config/bspwm/bspwmrc
 cp $path/config/src/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc
+
+
+
+mkdir $HOME/.config/polybar/
+
 cp $path/config/src/polybar/launch.sh $HOME/.config/polybar/launch.sh
 cp $path/config/src/polybar/config $HOME/.config/polybar/config
 
