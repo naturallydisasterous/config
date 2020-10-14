@@ -57,14 +57,10 @@ ln -sf $path/config/alacritty $HOME/.config/alacritty
 [ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
 ln -sf $path/config/nvim $HOME/.config/nvim
 
-echo "Final Step! Installing mimicwm..."
+echo "Final Step! Installing i3wm..."
 
-git clone https://github.com/Aaron-Mann/mimicwm
-
-cd mimicwm
-
-sudo make clean install
+sudo pacman -S i3wm
 
 echo "Congragulations! Installation is complete!"
 echo ""
-Echo "Now, type 'startx' to enter mimicwm and begin computing!"
+Echo "Now, type 'startx' to enter i3wm and begin computing!"
