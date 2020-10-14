@@ -22,7 +22,7 @@ rm -rf yay
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S brave-bin spotify minecraft-launcher
+yay --noconfirm -S brave-bin spotify minecraft-launcher neovim
 
 echo "Installing PIP Packages..."
 
@@ -56,10 +56,6 @@ ln -sf $path/config/alacritty $HOME/.config/alacritty
 
 [ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
 ln -sf $path/config/nvim $HOME/.config/nvim
-
-echo "Final Step! Installing i3wm..."
-
-sudo pacman -S i3wm
 
 echo "Congragulations! Installation is complete!"
 echo ""

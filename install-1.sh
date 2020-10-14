@@ -39,7 +39,7 @@ echo "Wheel group no longer needs root password to execute sudo."
 
 
 
-pacman --noconfirm --needed -Syy xonotic networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit xwallpaper picom Alacritty neovim emacs pulseaudio neofetch python python-pip
+pacman --noconfirm --needed -Syy xonotic networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit xwallpaper picom alacritty neovim emacs pulseaudio neofetch python python-pip xmonad
 
 systemctl enable NetworkManager
 systemctl start NetworkManager
