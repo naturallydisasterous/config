@@ -1,1 +1,1 @@
-exec mimicwm
+exec i3
