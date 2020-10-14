@@ -2,11 +2,17 @@
 
 path=$(pwd)
 
+echo "Beginning Installation..."
+
 pulseaudio --start
+
+echo "Cloning yay Repository..."
 
 git clone https://aur.archlinux.org/yay.git
 
 cd yay
+
+echo "Installing yay..."
 
 makepkg --noconfirm -si
 
@@ -14,7 +20,15 @@ cd ..
 
 rm -rf yay
 
-yay --noconfirm -S polybar brave-bin spotify
+echo "Installing AUR Packages..."
+
+yay --noconfirm -S brave-bin spotify minecraft-launcher
+
+echo "Installing PIP Packages..."
+
+pip install powerline-shell
+
+echo "Configuring Emacs..."
 
 # configure doom emacs
 
@@ -24,20 +38,25 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 
 # configure dotfiles and configs
 
-echo "Copying Dotfiles"
-
-echo "exec bspwm" >> $HOME/.xinitrc
+echo "Cloning Dotfile Git Repository..."
 
 git clone https://github.com/Aaron-Mann/config
 
-cp $path/config/src/bspwm/bspwmrc $HOME/.config/bspwm/bspwmrc
-cp $path/config/src/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc
+echo "Creating Symlinks in Home Directory..."
 
+ln -sf $path/.xinitrc $HOME/.xinitrc
+ln -sf $path/.bashrc $HOME/.bashrc
 
+echo "Creating Symlinks to '.config' Directory..."
 
-mkdir $HOME/.config/polybar/
+[ ! -d $HOME/.config ] && mkdir $HOME/.config
 
-cp $path/config/src/polybar/launch.sh $HOME/.config/polybar/launch.sh
-cp $path/config/src/polybar/config $HOME/.config/polybar/config
+[ -d $HOME/.config/alacritty ] && rm -rf $HOME/.config/alacritty
+ln -sf $path/config/alacritty $HOME/.config/alacritty
 
-cp $path/config/src/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+[ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
+ln -sf $path/config/nvim $HOME/.config/nvim
+
+echo "Congragulations! Installation is complete!"
+echo ""
+Echo "Now, type 'startx' to enter mimicwm and begin computing!"
