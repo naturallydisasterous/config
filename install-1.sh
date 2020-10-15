@@ -29,7 +29,7 @@ do
 done
 
 useradd -m -g wheel -s /bin/bash $USER
-passwd $PSWD
+passwd $USER $PSWD
 
 echo "User Account Configured."
 
@@ -37,9 +37,7 @@ echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 echo "Wheel group no longer needs root password to execute sudo."
 
-
-
-pacman --noconfirm --needed -Syy xonotic networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit xwallpaper picom alacritty neovim emacs pulseaudio neofetch python python-pip xmonad
+pacman --noconfirm -Syy xonotic networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit xwallpaper picom alacritty vim emacs pulseaudio neofetch python python-pip xmonad
 
 systemctl enable NetworkManager
 systemctl start NetworkManager
@@ -47,7 +45,7 @@ systemctl start NetworkManager
 cp install-2.sh /home/$USER/install-2.sh
 
 echo "Root system level configuration has been completed."
-echo ""
-echo "Please log out of root (with ctrl-d), and log into your system as '$USER' with the password '$PSWD' and run the following command:
+echo " "
+echo "Please log out of root (with ctrl-d), and log into your system as '$USER' with the password '$PSWD' and run the following command:"
 echo ""
 echo "bash install-2.sh"

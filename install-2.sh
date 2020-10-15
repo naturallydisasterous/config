@@ -4,8 +4,6 @@ path=$(pwd)
 
 echo "Beginning Installation..."
 
-pulseaudio --start
-
 echo "Cloning yay Repository..."
 
 git clone https://aur.archlinux.org/yay.git
@@ -59,4 +57,4 @@ ln -sf $path/config/nvim $HOME/.config/nvim
 
 echo "Congragulations! Installation is complete!"
 echo ""
-Echo "Now, type 'startx' to enter i3wm and begin computing!"
+echo "Now, type 'startx' to enter xmonad and begin computing!"
