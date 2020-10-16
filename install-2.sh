@@ -53,10 +53,10 @@ echo "Creating Symlinks to '.config' Directory..."
 [ ! -d $HOME/.config ] && mkdir $HOME/.config
 
 [ -d $HOME/.config/alacritty ] && rm -rf $HOME/.config/alacritty
-ln -sf $path/config/alacritty $HOME/.config/alacritty
+cp -r $path/config/alacritty $HOME/.config/alacritty
 
 [ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
-ln -sf $path/config/nvim $HOME/.config/nvim
+cp -r $path/config/nvim $HOME/.config/nvim
 
 echo "Congragulations! Installation is complete!"
 echo ""
