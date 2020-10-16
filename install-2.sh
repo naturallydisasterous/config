@@ -20,7 +20,7 @@ rm -rf yay
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S brave-bin spotify minecraft-launcher neovim
+yay --noconfirm -S brave-bin spotify-dev minecraft-launcher neovim
 
 echo "Installing PIP Packages..."
 
@@ -40,10 +40,13 @@ echo "Cloning Dotfile Git Repository..."
 
 git clone https://github.com/Aaron-Mann/config
 
-echo "Creating Symlinks in Home Directory..."
+echo "Creating .xinitrc file..."
 
-ln -sf $path/.xinitrc $HOME/.xinitrc
-ln -sf $path/.bashrc $HOME/.bashrc
+echo "exec xmonad" >> $HOME/.xinitrc
+
+echo "Creating .bashrc file..."
+
+echo "neofetch" >> $HOME/.bashrc
 
 echo "Creating Symlinks to '.config' Directory..."
 

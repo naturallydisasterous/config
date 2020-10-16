@@ -37,7 +37,7 @@ echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 echo "Wheel group no longer needs root password to execute sudo."
 
-pacman --noconfirm -Syy xonotic networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit xwallpaper picom alacritty vim emacs pulseaudio neofetch python python-pip xmonad
+pacman --noconfirm -Syy xonotic networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit xwallpaper picom alacritty vim emacs pulseaudio neofetch python python-pip xmonad xmonad-contrib neovim
 
 systemctl enable NetworkManager
 systemctl start NetworkManager
