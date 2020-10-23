@@ -4,6 +4,18 @@ path=$(pwd)
 
 echo "Beginning Installation..."
 
+echo "Cloning mimicwm Repository..."
+
+git clone https://github.com/Aaron-Mann/mimicwm
+
+echo "Building mimicwm..."
+
+cd mimicwm
+
+sudo make clean install
+
+cd ..
+
 echo "Cloning yay Repository..."
 
 git clone https://aur.archlinux.org/yay.git
@@ -20,11 +32,7 @@ rm -rf yay
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S brave-bin spotify-dev minecraft-launcher neovim
-
-echo "Installing PIP Packages..."
-
-pip install powerline-shell
+yay --noconfirm -S brave-bin spotify-dev minecraft-launcher
 
 echo "Configuring Emacs..."
 
@@ -42,7 +50,9 @@ git clone https://github.com/Aaron-Mann/config
 
 echo "Creating .xinitrc file..."
 
-echo "exec xmonad" >> $HOME/.xinitrc
+echo "xwallpaper --zoom $HOME/.wallpaper.jpeg" >> $HOME/.xinitrc
+echo "picom &" >> $HOME/.xinitrc
+echo "exec mimicwm" >> $HOME/.xinitrc
 
 echo "Creating .bashrc file..."
 
@@ -57,6 +67,8 @@ cp -r $path/config/alacritty $HOME/.config/alacritty
 
 [ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
 cp -r $path/config/nvim $HOME/.config/nvim
+
+cp -r $path/.wallpaper.jpg $HOME/.wallpaper.jpg
 
 echo "Congragulations! Installation is complete!"
 echo ""
