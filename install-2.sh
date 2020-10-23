@@ -50,7 +50,7 @@ git clone https://github.com/Aaron-Mann/config
 
 echo "Creating .xinitrc file..."
 
-echo "xwallpaper --zoom $HOME/.wallpaper.jpeg" >> $HOME/.xinitrc
+echo "xwallpaper --zoom $HOME/.wallpaper.jpg" >> $HOME/.xinitrc
 echo "picom &" >> $HOME/.xinitrc
 echo "exec mimicwm" >> $HOME/.xinitrc
 
