@@ -32,7 +32,7 @@ rm -rf yay
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S brave-bin spotify-dev minecraft-launcher
+yay --noconfirm -S brave-bin minecraft-launcher discord
 
 echo "Configuring Emacs..."
 
@@ -63,12 +63,12 @@ echo "Creating Symlinks to '.config' Directory..."
 [ ! -d $HOME/.config ] && mkdir $HOME/.config
 
 [ -d $HOME/.config/alacritty ] && rm -rf $HOME/.config/alacritty
-cp -r $path/config/alacritty $HOME/.config/alacritty
+cp -r $path/config/config/alacritty $HOME/.config/alacritty
 
 [ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
-cp -r $path/config/nvim $HOME/.config/nvim
+cp -r $path/config/config/nvim $HOME/.config/nvim
 
-cp -r $path/.wallpaper.jpg $HOME/.wallpaper.jpg
+cp -r $path/config/.wallpaper.jpg $HOME/.wallpaper.jpg
 
 echo "Congragulations! Installation is complete!"
 echo ""
