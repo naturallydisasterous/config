@@ -20,7 +20,7 @@ rm -rf yay
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S leftwm brave-bin minecraft-launcher discord
+yay --noconfirm -S leftwm brave-bin minecraft-launcher discord leftwm polybar
 
 # configure dotfiles and configs
 
@@ -30,8 +30,6 @@ git clone https://github.com/Aaron-Mann/config
 
 echo "Creating .xinitrc file..."
 
-echo "xwallpaper --zoom $HOME/.wallpaper.jpg" >> $HOME/.xinitrc
-echo "picom &" >> $HOME/.xinitrc
 echo "exec dbus-launch leftwm" >> $HOME/.xinitrc
 
 echo "Creating .bashrc file..."
@@ -45,7 +43,7 @@ echo "Creating Symlinks to '.config' Directory..."
 [ -d $HOME/.config/alacritty ] && rm -rf $HOME/.config/alacritty
 cp -r $path/config/config/alacritty $HOME/.config/alacritty
 
-cp -r $path/config/.wallpaper.jpg $HOME/.wallpaper.jpg
+cp -r $path/config/config/vim/.vimrc $HOME/.vimrc
 
 echo "Congragulations! Installation is complete!"
 echo ""
