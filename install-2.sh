@@ -20,7 +20,7 @@ rm -rf yay
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S leftwm brave-bin minecraft-launcher discord leftwm polybar
+yay --noconfirm -S leftwm brave-bin minecraft-launcher discord leftwm polybar nerd-fonts-inconsolata nerd-fonts-source-code-pro
 
 # configure dotfiles and configs
 
