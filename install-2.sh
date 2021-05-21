@@ -20,7 +20,7 @@ rm -rf yay
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S leftwm brave-bin minecraft-launcher discord leftwm polybar nerd-fonts-inconsolata nerd-fonts-source-code-pro
+yay --noconfirm -S brave-bin minecraft-launcher discord nerd-fonts-inconsolata nerd-fonts-source-code-pro
 
 # configure dotfiles and configs
 
@@ -30,7 +30,9 @@ git clone https://github.com/Aaron-Mann/config
 
 echo "Creating .xinitrc file..."
 
-echo "exec dbus-launch leftwm" >> $HOME/.xinitrc
+echo "xrandr --output HDMI-1-0 --auto --right-of eDP-1" >> $HOME/.xinitrc
+echo "feh --bg-fill --randomize ~wallpapers/" >> $HOME/.xinitrc
+echo "exec dwm" >> $HOME/.xinitrc
 
 echo "Creating .bashrc file..."
 
@@ -47,4 +49,4 @@ cp -r $path/config/config/vim/.vimrc $HOME/.vimrc
 
 echo "Congragulations! Installation is complete!"
 echo ""
-echo "Now, type 'startx' to enter leftwm and begin computing!"
+echo "Now, type 'startx' to enter dwm and begin computing!"
