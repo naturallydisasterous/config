@@ -28,6 +28,10 @@ echo "Cloning Dotfile Git Repository..."
 
 git clone https://github.com/Aaron-Mann/config
 
+echo "Copying wallpapers..."
+
+cp -r config/wallpapers/ $HOME
+
 echo "Creating .xinitrc file..."
 
 echo "xrandr --output HDMI-1-0 --auto --right-of eDP-1" >> $HOME/.xinitrc
