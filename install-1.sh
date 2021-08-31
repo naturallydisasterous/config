@@ -24,8 +24,20 @@ echo "User Account Configured."
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 echo "Wheel group no longer needs root password to execute sudo."
+
+echo "Enabling Multilib..."
+
+echo "#[multilib]" >> /etc/pacman.conf
+echo "#Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
+Echo "Done."
+
+Echo "Updating and installing core packages..."
+
 pacman --noconfirm -Syu
-pacman --noconfirm -Syy networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit xwallpaper dmenu picom alacritty vim alsa alsa-utils neofetch rofi glade rust
+pacman --noconfirm -Syy networkmanager ripgrep sudo git base-devel wget curl xorg xorg-xinit feh dmenu picom alacritty vim alsa alsa-utils neofetch steam
+
+Echo "Done."
 
 systemctl enable NetworkManager
 systemctl start NetworkManager
