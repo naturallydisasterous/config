@@ -6,11 +6,11 @@ echo "Beginning Installation..."
 
 echo "Cloning yay Repository..."
 
-git clone https://aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/paru.git
 
-cd yay
+cd paru
 
-echo "Installing yay..."
+echo "Installing paru..."
 
 makepkg --noconfirm -si
 
