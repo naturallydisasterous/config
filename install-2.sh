@@ -16,11 +16,11 @@ makepkg --noconfirm -si
 
 cd ..
 
-rm -rf yay
+rm -rf paru
 
 echo "Installing AUR Packages..."
 
-yay --noconfirm -S brave-bin minecraft-launcher discord nerd-fonts-inconsolata nerd-fonts-source-code-pro
+paru --noconfirm -S brave-bin minecraft-launcher discord nerd-fonts-inconsolata nerd-fonts-source-code-pro steam-fonts
 
 # configure dotfiles and configs
 
@@ -34,9 +34,8 @@ cp -r config/wallpapers/ $HOME
 
 echo "Creating .xinitrc file..."
 
-echo "xrandr --output HDMI-1-0 --auto --right-of eDP-1" >> $HOME/.xinitrc
 echo "feh --bg-fill --randomize ~wallpapers/" >> $HOME/.xinitrc
-echo "exec dwm" >> $HOME/.xinitrc
+echo "exec spectrwm" >> $HOME/.xinitrc
 
 echo "Creating .bashrc file..."
 
@@ -50,6 +49,8 @@ echo "Creating Symlinks to '.config' Directory..."
 cp -r $path/config/config/alacritty $HOME/.config/alacritty
 
 cp -r $path/config/config/vim/.vimrc $HOME/.vimrc
+
+cp -r $path/config/.spectrwm.conf $HOME/.spectrwm.conf
 
 echo "Congragulations! Installation is complete!"
 echo ""
